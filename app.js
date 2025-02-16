@@ -8,10 +8,10 @@ app.use(cors());
 
 // MySQL Database Connection
 const db = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database: "rfid"
+    host: "sql110.infinityfree.com",
+    user: "if0_37102903",
+    password: "zAW1DLMJYhoU0b",
+    database: "if0_37102903_rfid"
 });
 
 db.connect(err => {
