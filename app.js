@@ -4,20 +4,14 @@ const mysql = require('mysql2');
 
 const app = express();
 app.use(express.json());
-app.use(cors(
-      origin: ["https://rfid-node-api-sql.vercel.app"],  // Replace with frontend URL
-    methods: ["GET", "POST"],
-    credentials: true
-));
+app.use(cors());
 
 // MySQL Database Connection
-const db = mysql.createPool({
+const db = mysql.createConnection({
     host: "sql12.freesqldatabase.com",
     user: "sql12763373",
     password: "zDmQA9tVu5",
     database: "sql12763373",
-    connectionLimit: 10 // Allow up to 10 connections
-
 });
 
 db.connect(err => {
