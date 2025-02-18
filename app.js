@@ -5,7 +5,7 @@ const mysql = require('mysql2');
 const app = express();
 app.use(express.json());
 app.use(cors(
-      origin: ["https://your-frontend-domain.com"],  // Replace with frontend URL
+      origin: ["https://rfid-node-api-sql.vercel.app/"],  // Replace with frontend URL
     methods: ["GET", "POST"],
     credentials: true
 ));
