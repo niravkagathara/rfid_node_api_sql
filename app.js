@@ -4,14 +4,20 @@ const mysql = require('mysql2');
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors(
+      origin: ["https://your-frontend-domain.com"],  // Replace with frontend URL
+    methods: ["GET", "POST"],
+    credentials: true
+));
 
 // MySQL Database Connection
-const db = mysql.createConnection({
+const db = mysql.createPool({
     host: "sql12.freesqldatabase.com",
     user: "sql12763373",
     password: "zDmQA9tVu5",
-    database: "sql12763373"
+    database: "sql12763373",
+    connectionLimit: 10 // Allow up to 10 connections
+
 });
 
 db.connect(err => {
